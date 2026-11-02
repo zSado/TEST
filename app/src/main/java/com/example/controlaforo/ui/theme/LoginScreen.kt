@@ -24,7 +24,7 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // CORREGIDO: Se cambió 'style' por 'color'
+
         Text(text = "Control de Aforo", fontSize = 28.sp, color = MaterialTheme.colorScheme.primary)
         Spacer(modifier = Modifier.height(32.dp))
 
