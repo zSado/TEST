@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-// Un registro de la colección "historial_movimientos" (lo escribe MainScreen).
+
 data class Movimiento(
     val id: String,
     val accion: String,
@@ -39,7 +39,7 @@ fun HistorialScreen(onBack: () -> Unit) {
 
     val formatoFecha = remember { SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault()) }
 
-    // Escucha en tiempo real los últimos 100 movimientos, del más nuevo al más antiguo.
+
     DisposableEffect(Unit) {
         val listener = db.collection("historial_movimientos")
             .orderBy("fecha_hora", Query.Direction.DESCENDING)
@@ -149,7 +149,7 @@ private fun DatoResumen(titulo: String, valor: String) {
 @Composable
 private fun MovimientoItem(movimiento: Movimiento, fechaTexto: String) {
     val esEntrada = movimiento.accion == "Entrada"
-    // Mismos colores que los botones de MainScreen.
+
     val colorAccion = if (esEntrada) Color(0xFF388E3C) else Color(0xFFD32F2F)
 
     Card(modifier = Modifier.fillMaxWidth()) {
