@@ -23,7 +23,7 @@ import com.example.controlaforo.ui.theme.PerfilTema
 import com.example.controlaforo.ui.theme.PerfilesScreen
 import com.google.firebase.auth.FirebaseAuth
 
-// Pantallas a las que se puede navegar una vez iniciada la sesión.
+
 enum class Pantalla { PRINCIPAL, HISTORIAL, PERFILES }
 
 class MainActivity : ComponentActivity() {
@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // Aquí se guarda el tema elegido para que se mantenga al cerrar la app.
+
         val prefs = getSharedPreferences("ajustes_tema", Context.MODE_PRIVATE)
 
         setContent {
@@ -53,7 +53,7 @@ class MainActivity : ComponentActivity() {
                 }
                 var pantalla by rememberSaveable { mutableStateOf(Pantalla.PRINCIPAL) }
 
-                // El botón "atrás" del teléfono vuelve a la pantalla principal.
+
                 BackHandler(enabled = isLoggedIn && pantalla != Pantalla.PRINCIPAL) {
                     pantalla = Pantalla.PRINCIPAL
                 }
